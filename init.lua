@@ -21,10 +21,12 @@ require("lazy").setup({
       vim.cmd.hi("Comment gui=none")
     end,
   },
+  -- Telescope is for searching for example, useful with <C-p>
   {
     'nvim-telescope/telescope.nvim', branch = '0.1.x',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
+  -- Git integration.
   "tpope/vim-fugitive",
 
   {
