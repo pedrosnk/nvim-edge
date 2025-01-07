@@ -26,18 +26,45 @@ require("lazy").setup({
     'nvim-telescope/telescope.nvim', branch = '0.1.x',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
-  -- Git integration.
-  "tpope/vim-fugitive",
-
+  -- TreeSitter for better syntax hilight
   {
-    "nvim-tree/nvim-tree.lua",
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
+    config = function () 
+      local configs = require('nvim-treesitter.configs')
+
+      configs.setup({
+          ensure_installed = {
+            'c',
+            'elixir',
+            'erlang',
+            'heex',
+            'html',
+            'javascript',
+            'lua',
+            'query',
+            'ruby',
+            'vim',
+            'vimdoc',
+            'vue',
+          },
+          sync_install = false,
+          highlight = { enable = true },
+          indent = { enable = true },  
+        })
+    end
+  },
+  -- Git integration.
+  'tpope/vim-fugitive',
+  {
+    'nvim-tree/nvim-tree.lua',
     version = "*",
     lazy = false,
     dependencies = {
-      "nvim-tree/nvim-web-devicons",
+      'nvim-tree/nvim-web-devicons',
     },
     config = function()
-      require("nvim-tree").setup {}
+      require('nvim-tree').setup {}
     end,
   }
 })
