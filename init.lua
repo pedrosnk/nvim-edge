@@ -69,6 +69,41 @@ require("lazy").setup({
   }
 })
 
+-- before continue go and set ts sw tst and number
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+
+
+-- setup lsp
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'lua',
+  callback = function(ev)
+    vim.lsp.start({
+      name = 'luals',
+      cmd = {'lua-language-server'},
+      settings = {
+        Lua = {
+          runtime = {
+            version = 'LuaJIT'
+          },
+          diagnostics = {
+            globals =
+              { 'vim', 'require' }
+          },
+          workspace = {
+            library = {
+              [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+              [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true
+            }
+          }
+        }
+      }
+    })
+  end,
+})
+
 -- map telescope
 -- this should go to after/plugins eventually
 
