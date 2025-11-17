@@ -1,3 +1,7 @@
+-- Set <Space> as the leader key
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 vim.opt.guicursor = ""
 
 vim.opt.tabstop = 2
@@ -50,9 +54,6 @@ vim.opt.smartcase = true
 -- Decrease update time
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
-
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
 
 vim.g.have_nerd_font = true
 
