@@ -1,6 +1,6 @@
 # Neovim Dot files
 
-This is the total redone for of my neovim configuration.
+This is a complete redo of my Neovim configuration.
 
 ## Usage
 
