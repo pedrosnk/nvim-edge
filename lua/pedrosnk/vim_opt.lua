@@ -24,6 +24,7 @@ vim.opt.colorcolumn = "100"
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true
 vim.opt.breakindent = true
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
