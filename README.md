@@ -1,8 +1,6 @@
-# Neovim Dot files edge 24-11
+# Neovim Dot files
 
-This is the new interaction I'm working on to configure my neovim doftfils.
-As a early effort I'm again trying to replace neovim configuration by pushing new changes
-and maybe even introdcing a better LSP
+This is a complete redo of my Neovim configuration.
 
 ## Usage
 
@@ -11,6 +9,8 @@ To use this with your current neovim configuration. Create a new folder under ~/
 ```fish
 mkdir -p ~/.config/nvim-edge
 ```
+
+Clone this repository into that folder
 
 Then, add the alias on your init fish file
 ```lua
