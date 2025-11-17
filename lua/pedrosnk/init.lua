@@ -1,2 +1,2 @@
-require('pedrosnk/vim_opt')
-require('pedrosnk/lazy')
+require('pedrosnk.vim_opt')
+require('pedrosnk.lazy')
