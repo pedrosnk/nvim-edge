@@ -1,6 +1,7 @@
 # Neovim Dot files
 
-This is a complete redo of my Neovim configuration.
+This repo is my experimentation with neovim configuration. For future replacement on my current
+neovim flow.
 
 ## Usage
 
@@ -13,7 +14,7 @@ mkdir -p ~/.config/nvim-edge
 Clone this repository into that folder
 
 Then, add the alias on your init fish file
+
 ```lua
 alias nvim-edge='NVIM_APPNAME=nvim-edge nvim'
 ```
-
