@@ -22,9 +22,16 @@ jobs:
         run: |
           mkdir -p ~/.config
           ln -s "$GITHUB_WORKSPACE" ~/.config/nvim
-      
-      - name: Bootstrap plugins
+
+      - name: Bootstrap plugins + editor
         env:
           CI: "true"
         run: |
           nvim --headless "+Lazy! sync" +qa
+          nvim --headless "+qa"
+
+      - name: Run healthchecks
+        env:
+          CI: "true"
+        run: |
+          nvim --headless "+checkhealth" +qa
