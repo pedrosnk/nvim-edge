@@ -5,26 +5,26 @@ on:
   push:
     branches: ["main"]
 
-  jobs:
-    nvim-smoke:
-      runs-on: "ubuntu-latest"
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v6
+jobs:
+  nvim-smoke:
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
 
-        - name: Install nvim
-          uses: rhysd/action-setup-vim@v1
-          with:
-            neovim: true
-            version: stable
+      - name: Install nvim
+        uses: rhysd/action-setup-vim@v1
+        with:
+          neovim: true
+          version: stable
 
-        - name: Install dependencies
-          run: |
-            mkdir -p ~/.config
-            ln -s "$GITHUB_WORKSPACE" ~/.config/nvim
-        
-        - name: Bootstrap plugins
-          env:
-            CI: "true"
-          run: |
-            nvim --headless "+Lazy! sync" +qa
+      - name: Install dependencies
+        run: |
+          mkdir -p ~/.config
+          ln -s "$GITHUB_WORKSPACE" ~/.config/nvim
+      
+      - name: Bootstrap plugins
+        env:
+          CI: "true"
+        run: |
+          nvim --headless "+Lazy! sync" +qa
