@@ -19,6 +19,11 @@ vim.api.nvim_create_autocmd('FileType', {
       return
     end
 
+    local lang = vim.treesitter.language.get_lang(ev.match) or ev.match
+    if not vim.treesitter.language.add(lang) then
+      return
+    end
+
     -- starting treesitter highlighting and identation
     local ok = pcall(vim.treesitter.start, ev.buf)
     if ok then
